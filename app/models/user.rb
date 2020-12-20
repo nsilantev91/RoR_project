@@ -3,11 +3,15 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  validates :id_book, presence: true
-  validates :course, presence: true
-  validates :full_name, presence: true
-  validates :status, presence: true
-  validates :login, presence: true
-  validates :when_return, presence: true
+  enum status: {:user => 'user', :admin => 'admin'}
+  after_initialize :set_default_role, :if => :new_record?
+
+  def set_default_role
+    self.status ||= :user
+  end
+  #validates :id_book, presence: true
+   validates :login, :full_name,:course, presence: true
+  #validates :status, presence: true
+  #validates :when_return, presence: true
 
 end
