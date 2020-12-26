@@ -5,13 +5,12 @@ class HomeController < ApplicationController
 
   end
 
+
+
   def auth
 
   end
 
-  private
 
-  def authenticate_user!
-    # code here
-  end
+
 end
