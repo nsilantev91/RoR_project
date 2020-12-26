@@ -1,5 +1,28 @@
-Start
+Добро пожаловать, <%=@user.full_name %> <%= link_to "Выйти", destroy_user_session_path, :method => :delete,class: "exit-link" %>
 
-<%= link_to "Выйти", destroy_user_session_path, :method => :delete %>
+<%= link_to "Профиль", home_profile_path ,class: "profile-link" %>
 
-<%= link_to "Профиль", home_profile_path %>
+<h1 style="text-align:center">Книги</h1>
+
+
+
+<div class="book-container">
+  <% Book.all.each do |book| %>
+    <br>
+    <div class="description-book">
+      <%= book.name %>
+      <div class ="description-book-row">
+        <p>
+          <%= book.author %>
+        </p>
+        <p>
+          <%= book.year_of_publish %>
+        </p>
+        <p>
+          <%= link_to "Взять книгу", get_book(book.id) ,class: "index-link" %>
+        </p>
+      </div>
+    </div>
+    <br />
+  <% end %>
+</div>

@@ -13,3 +13,50 @@
  *= require_tree .
  *= require_self
  */
+.index-link {
+    color: blue;
+    text-align: center;
+
+}
+
+.profile-link {
+    color: blue;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    text-align:right;
+
+}
+.exit-link {
+    color: blue;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 1330px;
+    width: 100px;
+    text-align:right;
+}
+
+.title_book
+{
+    color: #2E2F30;
+    text-align: center;
+}
+
+.book-container {
+    text-align: center;
+    columns: auto;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.description-book {
+    font-size: 20px;
+    min-width: 200px;
+    padding: 5px;
+}
+
+.description-book .description-book-row {
+    font-size: 15px;
+}

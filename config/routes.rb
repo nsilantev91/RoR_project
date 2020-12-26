@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   get '/home/auth', 'auth#index'
   get '/home/profile', 'profile#index'
   get '/home/admin', 'admin#index'
+  #post '/home/get_book', to
 
 end
