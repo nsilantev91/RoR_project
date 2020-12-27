@@ -18,8 +18,15 @@
         <p>
           <%= book.year_of_publish %>
         </p>
-        <p>
-        </p>
+        <% if findRental(book.id)%>
+        Вы уже взяли данную книгу!
+  <% else %>
+        <%= form_for @rentals, url: '/home/getBook' do |f|  %>
+          <%= f.submit 'Взять книгу' %>
+          <%= f.hidden_field :id_book,value: book.id %>
+          <%= hidden_field_tag 'book'%>
+        <% end %>
+        <% end %>
       </div>
     </div>
     <br />

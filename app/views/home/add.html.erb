@@ -1,0 +1,25 @@
+<%= link_to "Домашняя страница", '/home/admin', class: "exit-link" %>
+<h1> Добавление новой книги </h1>
+
+<%= form_for @book, url: '/home/addBook' do |f|  %>
+  <div class="field">
+    <%= f.label :Название %><br />
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+  <div class="field">
+    <%= f.label :Автор %><br />
+    <%= f.text_field :author, autofocus: true%>
+  </div>
+  <div class="field">
+    <%= f.label :Доступное_количество %><br />
+    <%= f.text_field :available_count, autofocus: true %>
+  </div>
+  <div class="field">
+    <%= f.label :Дата_публикации %><br />
+    <%= f.text_field :year_of_publish, autofocus: true %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Добавить книгу" %>
+  </div>
+<% end %>

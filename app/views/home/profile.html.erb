@@ -1,1 +1,35 @@
-Profile
+Профиль пользователя <%=current_user.full_name %> <%= link_to "Выйти", destroy_user_session_path, :method => :delete,class: "exit-link" %>
+
+<%= link_to "Каталог книг", '/' ,class: "profile-link" %>
+
+<h1 style="text-align:center">Взятые книги</h1>
+
+
+
+<div class="book-container">
+  <% Book.all.each do |book| %>
+    <br>
+    <% if findRental(book.id)%>
+    <div class="description-book">
+      <%= book.name %>
+      <div class ="description-book-row">
+        <p>
+          <%= book.author %>
+        </p>
+        <p>
+          <%= book.year_of_publish %>
+        </p>
+        <p>
+          Необходимо вернуть до <%= Rentals.find_by_id_book(book.id).when_return.strftime("%B %d, %Y") %>
+        </p>
+        <%= form_for @rentals, url: '/home/returnBook' do |f|  %>
+          <%= f.submit 'Вернуть книгу' %>
+          <%= f.hidden_field :id_book,value: book.id %>
+          <%= hidden_field_tag 'book'%>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+    <br />
+  <% end %>
+</div>

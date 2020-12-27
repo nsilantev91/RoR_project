@@ -1,3 +1,23 @@
-Admin page
+<%= link_to "Выйти", destroy_user_session_path, :method => :delete, class: "exit-link" %>
 
-<%= link_to "Выйти", destroy_user_session_path, :method => :delete %>
+<h1 style="text-align:center">Текущий каталог книг</h1>
+
+<%= link_to "Добавить книгу", '/home/add'%>
+
+<div class="book-container">
+  <% Book.all.each do |book| %>
+    <br>
+    <div class="description-book">
+      <%= book.name %>
+      <div class ="description-book-row">
+        <p>
+          <%= book.author %>
+        </p>
+        <p>
+          <%= book.year_of_publish %>
+        </p>
+      </div>
+    </div>
+    <br />
+  <% end %>
+</div>

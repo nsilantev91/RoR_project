@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get '/home/auth', 'auth#index'
   get '/home/profile', 'profile#index'
   get '/home/admin', 'admin#index'
-  #post '/home/get_book', to
-
+  post '/home/getBook', 'home#getBook'
+  get '/home/add', 'home#add'
+  post '/home/addBook', 'home#addBook'
+  post '/home/returnBook', 'home#returnBook'
 end
