@@ -82,6 +82,6 @@ test:
 #
 production:
   <<: *default
-  database: postgres
-  username: postgres
-  password: password
+  database: d8u8096qolf4l0
+  username: rovyxiahtzwdmz
+  password: a07296ea1c9c5d300aab8a6ee78b07ece92ffbb881fd988b27e1a92353215fca
