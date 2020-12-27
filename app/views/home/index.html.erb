@@ -8,7 +8,6 @@
 
 <div class="book-container">
   <% Book.all.each do |book| %>
-    <%= form_for book, url: '/getBook',method: 'post' do |f| %>
     <br>
     <div class="description-book">
       <%= book.name %>
@@ -20,11 +19,9 @@
           <%= book.year_of_publish %>
         </p>
         <p>
-          <%= f.submit "Взять книгу", get_book(book.id) %>
         </p>
       </div>
     </div>
     <br />
-  <% end %>
   <% end %>
 </div>
