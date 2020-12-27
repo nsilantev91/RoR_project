@@ -6,6 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-book1 = Book.create!(id_book: 1, name: 'Book1', author: 'Author1', available_count: 10, year_of_publish: 2020)
+book1 = Book.create!(name: 'Война и Мир', author: 'Л.Толстой', available_count: 10, year_of_publish: 1865)
+book2 = Book.create!(name: '11/22/63', author: 'С.Кинг', available_count: 10, year_of_publish: 2011)
+book3 = Book.create!(name: 'Алгоритмы и структуры данных', author: 'Т.Кормен', available_count: 10, year_of_publish: 2007)
+book4 = Book.create!(name: 'МОЗИ', author: 'В.Пилиди', available_count: 10, year_of_publish: 2016)
+book5 = Book.create!(name: 'Алгебра и геометрия', author: 'Я.Ерусалимский', available_count: 10, year_of_publish: 2015)
 
-user = User.create!(id_book: 1, password: '12345678', login: 'login', full_name: 'full_name',status: 'admin', when_return: '13.12.2020',email: 'test@test.com', course: 3)
+user = User.create!(password: '12345678', login: 'test', full_name: 'Test user',status: 'user',email: 'user@test.com', course: 3)
+admin = User.create!(password: '12345678', login: 'test_admin',full_name: 'Test admin',status: 'admin',email: 'admin@test.com', course: 0)

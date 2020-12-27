@@ -5,9 +5,11 @@ class HomeController < ApplicationController
     @user = current_user
   end
 
+  helper_method :get_book
   def get_book(id)
     when_return = Time.zone.now
-    Rentals.create!(:login => @user.login,:id_book => id)
+    object = Rentals.new(:login => @user.login,:id_book => id)
+    object.save
 
   end
 
