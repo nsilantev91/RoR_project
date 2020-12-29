@@ -3,6 +3,7 @@ class Mig2 < ActiveRecord::Migration[6.0]
     create_table :rentals do |t|
       t.string :login, null: false
       t.datetime :when_return, null: false
+      t.integer :id_book, null:false
       t.timestamps
     end
     create_table :users do |t|
